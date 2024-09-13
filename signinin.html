@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #app {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .section {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Starting Page -->
+        <div id="startPage" class="section">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTzPFGyg8JCSEJwPbZmGPbAjkvmaK6DMrxPg&s" alt="TechCorp Logo" class="logo">
+            <h2>Welcome to TechCorp</h2>
+            <p>Please select your role to proceed:</p>
+            <button id="chooseAdmin">Admin</button>
+            <button id="chooseEmployee">Employee</button>
+        </div>
+
+        <!-- Login Section for Admin -->
+        <div id="adminLogin" class="section hidden">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTzPFGyg8JCSEJwPbZmGPbAjkvmaK6DMrxPg&s" alt="TechCorp Logo" class="logo">
+            <h2>Admin Login</h2>
+            <form id="adminLoginForm">
+                <label for="adminUsername">Username:</label>
+                <input type="text" id="adminUsername" required>
+                <label for="adminPassword">Password:</label>
+                <input type="password" id="adminPassword" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="adminLoginError" class="error-message"></p>
+        </div>
+
+        <!-- Login Section for Employee -->
+        <div id="employeeLogin" class="section hidden">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTzPFGyg8JCSEJwPbZmGPbAjkvmaK6DMrxPg&s" alt="TechCorp Logo" class="logo">
+            <h2>Employee Login</h2>
+            <form id="employeeLoginForm">
+                <label for="employeeUsername">Username:</label>
+                <input type="text" id="employeeUsername" required>
+                <label for="employeePassword">Password:</label>
+                <input type="password" id="employeePassword" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="employeeLoginError" class="error-message"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startPage = document.getElementById('startPage');
+            const adminLogin = document.getElementById('adminLogin');
+            const employeeLogin = document.getElementById('employeeLogin');
+            const adminLoginForm = document.getElementById('adminLoginForm');
+            const employeeLoginForm = document.getElementById('employeeLoginForm');
+
+            const users = {
+                admin: { username: 'admin', password: 'admin', role: 'admin' },
+                employee: { username: 'employee', password: 'employee', role: 'employee' }
+            };
+
+            // Handle role selection
+            document.getElementById('chooseAdmin').addEventListener('click', () => {
+                startPage.classList.add('hidden');
+                adminLogin.classList.remove('hidden');
+            });
+
+            document.getElementById('chooseEmployee').addEventListener('click', () => {
+                startPage.classList.add('hidden');
+                employeeLogin.classList.remove('hidden');
+            });
+
+            // Admin login validation
+            adminLoginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('adminUsername').value;
+                const password = document.getElementById('adminPassword').value;
+                const adminLoginError = document.getElementById('adminLoginError');
+                adminLoginError.textContent = '';
+
+                if (username === users.admin.username && password === users.admin.password) {
+                    // Navigate to index.html upon successful login
+                    window.location.href = 'index.html';
+                } else {
+                    adminLoginError.textContent = 'Invalid admin credentials';
+                }
+            });
+
+            // Employee login validation
+            employeeLoginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('employeeUsername').value;
+                const password = document.getElementById('employeePassword').value;
+                const employeeLoginError = document.getElementById('employeeLoginError');
+                employeeLoginError.textContent = '';
+
+                if (username === users.employee.username && password === users.employee.password) {
+                    // Navigate to index.html upon successful login
+                    window.location.href = 'employee.html';
+                } else {
+                    employeeLoginError.textContent = 'Invalid employee credentials';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

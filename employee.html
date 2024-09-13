@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ddd;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.25rem;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="signinin.html" class="back-link">← Back </a>
+
+    <div class="container">
+        <h1>Employee Details</h1>
+        
+        <div class="profile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Unknown_person.jpg" alt="Employee Photo">
+            <div class="profile-info">
+                <h2>Ajay Dhamija</h2>
+                <p><strong>Employee ID:</strong> 12345</p>
+                <p><strong>Salary:</strong> Rs75,000</p>
+                <p><strong>Position:</strong> Senior Developer</p>
+                <p><strong>Department:</strong> IT</p>
+                <p><strong>Joining Date:</strong> January 15, 2020</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Current Projects</h3>
+            <ul>
+                <li><strong>Project Alpha:</strong> Development phase, focusing on backend architecture.</li>
+                <li><strong>Project Beta:</strong> Testing phase, QA and bug fixes.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Upcoming Projects</h3>
+            <ul>
+                <li><strong>Project Gamma:</strong> Planning phase, requirements gathering.</li>
+                <li><strong>Project Delta:</strong> Kickoff meeting, initial setup and team alignment.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Leaves Taken</h3>
+            <ul>
+                <li><strong>Annual Leave:</strong> 5 days (March 10-14, 2024)</li>
+                <li><strong>Sick Leave:</strong> 2 days (April 1-2, 2024)</li>
+                <li><strong>Personal Leave:</strong> 1 day (August 15, 2024)</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
